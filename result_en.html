@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>論文の要約</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .paper {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .authors {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .item {
+        background-color: #f1f1f1;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    .item h3 {
+        font-size: 1.1rem;
+        margin: 0 0 0.5rem 0;
+        padding: 2px 4px;
+    }
+
+    .item p {
+        margin: 0;
+        padding-top: 0.5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="paper">
+    <h2><a href="http://arxiv.org/abs/2304.10537v1" target="_blank">Learning Neural Duplex Radiance Fields for Real-Time View Synthesis</a></h2>
+    <p class="authors">Ziyu Wan, Christian Richardt, Aljaž Božič, Chao Li, Vijay Rengarajan, Seonghyeon Nam, Xiaoyu Xiang, Tuotuo Li, Bo Zhu, Rakesh Ranjan, Jing Liao</p>
+    <div class="container">
+        <div class="item">
+            <h3>What is it about?</h3>
+            <p>This paper proposes a method called Neural Duplex Radiance Fields (NDRF) for real-time view synthesis by distilling and baking Neural Radiance Fields (NeRFs) into highly efficient mesh-based neural representations. The main idea is to learn the color of any pixel from the ray segment defined by the reliable interval of the density distribution. The paper focuses on achieving high-fidelity real-time view synthesis by addressing the high computational cost of rendering NeRFs. The proposed method uses convolutional shading and a multi-view distillation strategy to improve rendering quality and reduce computational cost. The paper provides extensive quantitative and qualitative comparisons with existing efficient NeRF methods.</p>
+        </div>
+        <div class="item">
+            <h3>What makes this paper impressive compared to previous research?</h3>
+            <p>The paper proposes a novel approach called neural duplex radiance fields (NDRF) for real-time view synthesis, which significantly reduces the number of sampled points along a ray while preserving the realistic details of complex scenes. The paper's contributions include the use of two-layer duplex meshes to represent the 3D scene, a convolutional shading network to generate high-frequency textures and view-dependent effects, and multi-view distillation to improve the quality of the radiance field. The paper outperforms previous research in terms of run-time efficiency, rendering quality, and computational cost, achieving 10,000 times better run-time performance compared to the original NeRF while maintaining high-quality rendering. The proposed method also produces more appealing results and better view-dependent appearance compared to other efficient NeRF methods.</p>
+        </div>
+        <div class="item">
+            <h3>What is the core of the technique </h3>
+            <p>The core of the technique in this paper is the neural duplex radiance field (NDRF), which is a novel approach that distills and bakes neural radiance fields (NeRFs) into highly efficient mesh-based neural representations for real-time view synthesis. The NDRF represents scenes as neural radiance features encoded on a two-layer duplex mesh, which overcomes the inaccuracies in 3D surface reconstruction by learning the aggregated radiance information from a reliable interval of ray-surface intersections. The technique also involves a convolutional shading network and a multi-view distillation strategy for better optimization.</p>
+        </div>
+        <div class="item">
+            <h3>How was this paper's effectiveness validated?</h3>
+            <p>The effectiveness of the paper was validated through extensive experiments on standard datasets, including NeRF-Synthetic, Tanks&Temples, and Fox. The evaluation methods included quantitative metrics such as PSNR, SSIM, and LPIPS, as well as qualitative comparisons with other methods. The paper also conducted an ablation study to verify the effectiveness of the proposed components and to investigate the influence of network size. The experiments were conducted using CUDA and WebGL backends, and the results were compared with KiloNeRF and SNeRG methods.</p>
+        </div>
+        <div class="item">
+            <h3>Are there any discussions?</h3>
+            <p>There are discussions, limitations, and future works mentioned in the paper. The limitations include difficulties in representing transparent or semi-transparent scenes and the focus on object-level and bounded-scene datasets. The future works include exploring scene-specific thresholds for more robust proxy extraction and efficiently rendering real-world unbounded scenes. However, there is no mention of limitations or future works in the provided excerpts from the paper.</p>
+        </div>
+        <div class="item">
+            <h3>What are the next papers to read?</h3>
+            <p>The paper mentions several related works in the field of neural rendering, but does not provide a specific list of recommended papers to read next. It does mention several concurrent works that explore efficient rendering of neural radiance fields, such as MobileNeRF, EfficientNeRF, and Baking Neural Radiance Fields, as well as previous works on neural radiance fields, such as NeRF, TensoRF, and MVSNeRF.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
